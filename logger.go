@@ -93,9 +93,8 @@ func stampTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 		enc.AppendTimeLayout(t, format)
 		return
 	}
-	host, _ := os.Hostname()
 
-	enc.AppendString(t.Format(format) + " " + host + " " + appName + ": ")
+	enc.AppendString(t.Format(format))
 }
 
 func LevelToAtomic(lvl Level) zap.AtomicLevel {
