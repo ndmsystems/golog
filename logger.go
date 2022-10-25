@@ -21,10 +21,8 @@ type Zap struct {
 }
 
 var l = &Logger{}
-var appName string
 
-func Init(zone, env, name string) {
-	appName = name + "-" + env
+func Init(env string) {
 	// setup logs
 	lvl := "debug"
 	isDev := true
