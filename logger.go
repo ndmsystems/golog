@@ -125,7 +125,7 @@ func Fatal(msg ...interface{}) {
 
 // Fatalf followed by a call to os.Exit(1).
 func Fatalf(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Fatal(msg)
 	os.Exit(1)
 }
@@ -137,7 +137,7 @@ func Panic(msg ...interface{}) {
 
 // Panicf followed by a call to panic().
 func Panicf(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Panic(msg)
 }
 
@@ -148,7 +148,7 @@ func Error(msg ...interface{}) {
 
 // Errorf logs a message using ERROR as log level.
 func Errorf(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Error(msg)
 }
 
@@ -159,7 +159,7 @@ func Warning(msg ...interface{}) {
 
 // Warningf logs a message using WARNING as log level.
 func Warningf(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Warn(msg)
 }
 
@@ -170,7 +170,7 @@ func Info(msg ...interface{}) {
 
 // Infof logs a message using INFO as log level.
 func Infof(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Info(msg)
 }
 
@@ -181,7 +181,7 @@ func Debug(msg ...interface{}) {
 
 // Debugf logs a message using DEBUG as log level.
 func Debugf(format string, args ...interface{}) {
-	msg := fmt.Sprintf(format, args)
+	msg := fmt.Sprintf(format, args...)
 	l.zap.Debug(msg)
 }
 
