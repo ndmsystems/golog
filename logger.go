@@ -22,16 +22,16 @@ type Zap struct {
 
 var l = &Logger{}
 
-func Init(env string) {
-	// setup logs
-	lvl := "debug"
-	isDev := true
-	disableStack := false
+func Init(debug bool) {
+	lvl := "info"
+	isDev := false
+	disableStack := true
 
-	if env == "prod" {
-		lvl = "info"
-		isDev = false
-		disableStack = true
+	// setup logs
+	if debug {
+		lvl = "debug"
+		isDev = true
+		disableStack = false
 	}
 
 	config := &zap.Config{
