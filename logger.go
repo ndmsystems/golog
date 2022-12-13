@@ -31,7 +31,7 @@ func Init(debug bool) {
 	if debug {
 		lvl = "debug"
 		isDev = true
-		disableStack = false
+		disableStack = true
 	}
 
 	config := &zap.Config{
